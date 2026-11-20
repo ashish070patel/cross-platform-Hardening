@@ -1,0 +1,543 @@
+/* =========================
+   Global Styles
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   Application Layout
+   ========================= */
+
+.app-layout {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+
+/* =========================
+   Sidebar
+   ========================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    flex-shrink: 0;
+    min-width: 0;
+    min-height: 100vh;
+
+    padding: 25px 15px;
+
+    background: #111827;
+    color: #ffffff;
+}
+
+.sidebar-header {
+    padding: 0 10px 25px;
+    border-bottom: 1px solid #374151;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar-header p {
+    margin: 6px 0 0;
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   Sidebar Navigation
+   ========================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.nav-item {
+    display: block;
+    min-width: 0;
+    padding: 12px 10px;
+
+    color: #d1d5db;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    border-radius: 6px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #374151;
+    color: #ffffff;
+}
+
+.nav-item:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   Sidebar Footer
+   ========================= */
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    width: 100%;
+    min-width: 0;
+
+    margin-top: auto;
+    padding: 18px 10px 5px;
+
+    border-top: 1px solid #374151;
+
+    color: #9ca3af;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.sidebar-footer span {
+    display: block;
+    max-width: 100%;
+    min-width: 0;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   Page Headers
+   ========================= */
+
+.page-container {
+    width: 100%;
+    min-width: 0;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   Summary Cards
+   ========================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    min-width: 0;
+    padding: 22px;
+
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+    margin: 0 0 12px;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   Content Sections
+   ========================= */
+
+.security-section {
+    min-width: 0;
+    margin-bottom: 25px;
+    padding: 25px;
+
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.security-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+/* =========================
+   Tables
+   ========================= */
+
+.security-table {
+    width: 100%;
+    min-width: 600px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.security-table th,
+.security-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.security-table th {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.security-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* Allow wide tables to scroll within their sections. */
+
+.security-section {
+    overflow-x: auto;
+}
+
+
+/* =========================
+   Security Status
+   ========================= */
+
+.status-secure {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.status-critical {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+
+/* =========================
+   Security Detail Cards
+   ========================= */
+
+.security-status-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 20px 0 30px;
+}
+
+.security-status-card {
+    min-width: 0;
+    padding: 20px;
+
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.security-status-card h3 {
+    margin: 0 0 10px;
+    color: #6b7280;
+    font-size: 16px;
+}
+
+.security-status-card p {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   Form Controls
+   ========================= */
+
+select,
+input,
+button,
+textarea {
+    font: inherit;
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   Tablet Layout
+   ========================= */
+
+@media (max-width: 1100px) {
+    .summary-grid,
+    .security-status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+}
+
+
+/* =========================
+   Mobile Layout
+   ========================= */
+
+@media (max-width: 700px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 18px 15px;
+    }
+
+    .sidebar-header {
+        padding-bottom: 15px;
+    }
+
+    /* Display navigation as a two-column grid. */
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .nav-item {
+        min-width: 0;
+        margin: 0;
+        padding: 12px 10px;
+    }
+
+    /*
+       On mobile, the footer belongs to the normal sidebar flow.
+       It no longer relies on a viewport-height sidebar.
+    */
+    .sidebar-footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px 16px;
+        margin-top: 18px;
+        padding: 14px 10px 4px;
+    }
+
+    .sidebar-footer span {
+        flex: 1 1 150px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px 16px;
+    }
+
+    .page-header h1 {
+        font-size: 27px;
+    }
+
+    .security-section {
+        padding: 18px;
+    }
+
+    .security-table {
+        min-width: 600px;
+    }
+}
+
+
+/* =========================
+   Small Mobile Screens
+   ========================= */
+
+@media (max-width: 420px) {
+    .summary-grid,
+    .security-status-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .main-content {
+        padding: 16px 12px;
+    }
+
+    .sidebar {
+        padding: 16px 12px;
+    }
+
+    .sidebar-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 4px;
+    }
+
+    .sidebar-footer span {
+        flex: none;
+        width: 100%;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .summary-card {
+        padding: 18px;
+    }
+}
+
+
+/* =========================
+   Table Text and Font Fix
+   ========================= */
+
+.security-table {
+    width: 100%;
+    min-width: 1200px;
+    table-layout: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.security-table th {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+.security-table td {
+    overflow-wrap: normal;
+    word-break: normal;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+/* Keep short labels and values on a single line. */
+.security-table th:nth-child(1),
+.security-table td:nth-child(1),
+.security-table th:nth-child(2),
+.security-table td:nth-child(2),
+.security-table th:nth-child(3),
+.security-table td:nth-child(3),
+.security-table th:nth-child(4),
+.security-table td:nth-child(4),
+.security-table th:nth-child(6),
+.security-table td:nth-child(6),
+.security-table th:nth-child(7),
+.security-table td:nth-child(7),
+.security-table th:nth-child(8),
+.security-table td:nth-child(8),
+.security-table th:nth-child(9),
+.security-table td:nth-child(9) {
+    white-space: nowrap;
+}
+
+/* Allow the alert message to wrap naturally at spaces. */
+.security-table th:nth-child(5),
+.security-table td:nth-child(5) {
+    min-width: 230px;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Keep table scrolling inside its white card on narrow screens. */
+.security-section {
+    overflow-x: auto;
+}

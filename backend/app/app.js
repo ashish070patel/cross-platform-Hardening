@@ -25,12 +25,12 @@ const systemRoutes = require("../routes/systemRoutes");
 const agentRoutes = require("../routes/agentRoutes");
 const securityRoutes = require("../routes/securityRoutes");
 const alertRoutes = require("../routes/alertRoutes");
-
+const aiRoutes = require("../routes/aiRoutes");
 app.use("/api/system", systemRoutes);
 app.use("/api/agents", agentRoutes);
 app.use("/api/security", securityRoutes);
 app.use("/api/alerts", alertRoutes);
-
+app.use("/api/ai", aiRoutes);
 // ================================
 // Unknown Route Handler
 // ================================

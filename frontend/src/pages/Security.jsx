@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
 import api from "../services/api";
+import AISecurityAnalysis from "../components/AISecurityAnalysis";
+import { classifyPort } from "../utils/portClassification";
 
 function formatDate(dateValue) {
     if (!dateValue) {
@@ -340,11 +342,35 @@ function Security() {
 
                                 <tr>
                                     <td>Listening Ports</td>
-                                    <td>
+                                    {/* <td>
                                         {openPorts.length > 0
                                             ? openPorts.join(", ")
                                             : "None reported"}
-                                    </td>
+                                    </td> */}
+                                    
+<td>
+  {openPorts.length > 0 ? (
+    <div className="security-port-list">
+      {openPorts.map((port, index) => {
+        const info = classifyPort(port);
+
+        return (
+          <span
+            key={`${port}-${index}`}
+            className={`security-port-badge port-${info.category}`}
+            title={`${info.service} - Common port association`}
+          >
+            {port}
+            <small>{info.service}</small>
+          </span>
+        );
+      })}
+    </div>
+  ) : (
+    "None reported"
+  )}
+</td>
+
                                 </tr>
 
                                 <tr>
@@ -381,6 +407,14 @@ function Security() {
                             </tbody>
                         </table>
                     </section>
+                    {/*  ai security analysis component */ }
+                      <AISecurityAnalysis
+                        key={selectedAgentId}
+                        agentId={selectedAgentId}
+                    />
+
+
+
                 </>
             )}
         </div>

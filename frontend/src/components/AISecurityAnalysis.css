@@ -1,0 +1,505 @@
+
+/* ==========================================
+   AI SECURITY INTELLIGENCE
+   Azure / White Enterprise Theme
+========================================== */
+
+.ai-security {
+  --ai-primary: #087dc1;
+  --ai-primary-hover: #086aa3;
+  --ai-text: #172b4d;
+  --ai-muted: #64748b;
+  --ai-border: #dce6f0;
+  --ai-panel: #f8fbff;
+
+  background: #ffffff;
+  border: 1px solid var(--ai-border);
+  border-radius: 14px;
+  padding: 26px;
+  margin-top: 24px;
+  color: var(--ai-text);
+  box-shadow: 0 3px 14px rgba(22, 58, 92, 0.05);
+  font-family: inherit;
+}
+
+.ai-security * {
+  box-sizing: border-box;
+}
+
+.ai-security h2,
+.ai-security h3 {
+  color: var(--ai-text);
+  margin-top: 0;
+}
+
+/* Header */
+
+.ai-security-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ai-security-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ai-security-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #eaf5ff;
+  color: var(--ai-primary);
+  font-size: 25px;
+}
+
+.ai-security h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.ai-security-subtitle {
+  color: var(--ai-muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.ai-security-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.ai-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+/* Buttons */
+
+.ai-security-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.ai-security button.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ai-security button.ai-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ai-security .ai-btn-primary {
+  background: var(--ai-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(8, 125, 193, 0.12);
+}
+
+.ai-security .ai-btn-primary:hover:not(:disabled) {
+  background: var(--ai-primary-hover);
+  box-shadow: 0 4px 12px rgba(8, 125, 193, 0.2);
+}
+
+.ai-security .ai-btn-secondary {
+  background: #f1f7fd;
+  color: #176da8;
+  border-color: #c7ddf0;
+}
+
+.ai-security .ai-btn-secondary:hover:not(:disabled) {
+  background: #e4f1fc;
+}
+
+/* Loading */
+
+.ai-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #bfdbfe;
+  border-top-color: #087dc1;
+  border-radius: 50%;
+  animation: ai-spin 0.8s linear infinite;
+}
+
+@keyframes ai-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ai-loading-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #eff8ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 9px;
+  color: #075985;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* Empty State */
+
+.ai-empty-state {
+  text-align: center;
+  padding: 36px 20px;
+  background: #f8fbff;
+  border: 1px dashed #c7d9eb;
+  border-radius: 12px;
+}
+
+.ai-empty-icon {
+  color: var(--ai-primary);
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.ai-empty-state h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.ai-empty-state p {
+  color: var(--ai-muted);
+  font-size: 0.9rem;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Analysis Panel */
+
+.ai-security-panel {
+  background: var(--ai-panel);
+  border: 1px solid var(--ai-border);
+  border-radius: 11px;
+  padding: 22px;
+  margin-top: 18px;
+}
+
+.ai-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ai-panel-header h3 {
+  color: var(--ai-text);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.ai-panel-eyebrow {
+  color: var(--ai-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 7px;
+}
+
+/* Risk Badges */
+
+.ai-risk-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 7px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.ai-risk-low {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.ai-risk-medium {
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+}
+
+.ai-risk-high {
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+}
+
+.ai-risk-critical {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+}
+
+/* AI Markdown */
+
+.ai-security-markdown {
+  color: #334155;
+  font-size: 0.93rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.ai-security-markdown p {
+  margin: 10px 0;
+}
+
+.ai-security-markdown strong {
+  color: #172b4d;
+}
+
+.ai-security-markdown ul,
+.ai-security-markdown ol {
+  padding-left: 22px;
+  margin: 12px 0;
+}
+
+.ai-security-markdown li {
+  margin-bottom: 9px;
+}
+
+.ai-security-markdown h1,
+.ai-security-markdown h2,
+.ai-security-markdown h3,
+.ai-security-markdown h4 {
+  color: #176da8;
+  font-size: 1rem;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.ai-security-markdown code {
+  background: #e8f2fb;
+  color: #075985;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.86rem;
+}
+
+.ai-security-markdown hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 20px 0;
+}
+
+/* Analysis Footer */
+
+.ai-analysis-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  margin-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  color: var(--ai-muted);
+  font-size: 0.78rem;
+}
+
+/* History */
+
+.ai-history-section {
+  margin-top: 30px;
+}
+
+.ai-history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ai-history-heading h3 {
+  color: var(--ai-text);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.ai-history-count {
+  color: #475569;
+  background: #edf3f9;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+}
+
+.ai-security-history {
+  display: grid;
+  gap: 12px;
+}
+
+.ai-history-card {
+  background: #ffffff;
+  border: 1px solid var(--ai-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ai-history-card[open] {
+  border-color: #93c5fd;
+}
+
+.ai-history-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ai-history-summary::-webkit-details-marker {
+  display: none;
+}
+
+.ai-history-summary:hover {
+  background: #f1f7fd;
+}
+
+.ai-history-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ai-history-meta strong {
+  color: #172b4d;
+  font-size: 0.9rem;
+}
+
+.ai-history-meta span {
+  color: var(--ai-muted);
+  font-size: 0.78rem;
+}
+
+.ai-history-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-history-chevron {
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.ai-history-card[open] .ai-history-chevron {
+  transform: rotate(180deg);
+}
+
+.ai-history-content {
+  padding: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Error */
+
+.ai-security-error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  padding: 13px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  .ai-security {
+    padding: 16px;
+  }
+
+  .ai-security-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ai-security-heading {
+    align-items: flex-start;
+  }
+
+  .ai-security h2 {
+    font-size: 1.15rem;
+  }
+
+  .ai-security-actions {
+    flex-direction: column;
+  }
+
+  .ai-security button.ai-btn {
+    width: 100%;
+  }
+
+  .ai-security-panel {
+    padding: 16px;
+  }
+
+  .ai-panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-history-summary {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-security *,
+  .ai-security *::before,
+  .ai-security *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

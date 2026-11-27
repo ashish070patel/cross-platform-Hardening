@@ -1,4 +1,4 @@
-# Cross-Platform Hardening
+# Cross-platform endpoint monitoring 
 
 A web-based endpoint security monitoring platform with a React dashboard, Node.js/Express API, MongoDB persistence, a Python monitoring agent, and Gemini-powered AI security assessments.
 
